@@ -75,12 +75,25 @@ function cambiarContexto(contexto) {
 };
 
 const cuentaRegresiva = () => {
-    iniciarPausar()
+    if (tiempoTranscurridoSeg <= 0){
+        reiniciar()
+        alert('Tiempo final')
+        return;
+    }
     tiempoTranscurridoSeg -= 1
 }
 
-botonIniciarPausar.addEventListener('click', cuentaRegresiva);
+botonIniciarPausar.addEventListener('click', iniciarPausar());
 
 function iniciarPausar() {
+    if(idIntervalo){
+        reiniciar()
+        return;
+    }
     idIntervalo = setInterval(cuentaRegresiva,1000);
+}
+
+function reiniciar() {
+    clearInterval(idIntervalo)
+    idIntervalo = null;
 }
