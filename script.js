@@ -1,3 +1,5 @@
+// Variables globales
+
 const html = document.querySelector('html');
 const botonCorto = document.querySelector('.app__card-button--corto');
 const botonEnfoque = document.querySelector('.app__card-button--enfoque');
@@ -11,7 +13,7 @@ const iconoIniciarPausar = document.querySelector('.app__card-primary-butto-icon
 const tiempoEnPantalla = document.querySelector('#timer');
 
 
-
+// Variables para musica
 const musica = new Audio('./sonidos/luna-rise-part-one.mp3');
 const botonIniciarPausar = document.querySelector('#start-pause')
 const audioPlay = new Audio('./sonidos/play.wav');
@@ -19,7 +21,7 @@ const audioPausa = new Audio('./sonidos/pause.mp3');
 const audioTiempoFinalizado = new Audio('./sonidos/beep.mp3');
 
 
-
+// Reproduccion de sonidos
 let tiempoTranscurridoSeg = 1500;
 let idIntervalo = null;
 
@@ -52,7 +54,7 @@ botonLargo.addEventListener('click', () => {
     botonLargo.classList.add('active')
 });
 
-
+//Funcion para cambiar contexto de las imagenes
 function cambiarContexto(contexto) {
 
     mostrarTiempo()
@@ -85,7 +87,7 @@ function cambiarContexto(contexto) {
 };
 
 
-
+//Funciones
 const cuentaRegresiva = () => {
     if (tiempoTranscurridoSeg <= 0){
         audioTiempoFinalizado.play();
